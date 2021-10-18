@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:background="?attr/backgroundColor"
+    android:layout_height="match_parent"
+    tools:context=".Screens.Launch">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        app:contentInsetStart="0dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            >
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_tab"
+                android:background="@android:color/transparent"
+                android:layout_centerVertical="true"
+                app:tabIndicator="@drawable/no_indicator"
+                app:tabTextColor="?attr/tabTextColor"
+                app:tabTextAppearance="@style/tabTextAppearance"
+                app:tabSelectedTextColor="@color/colorPrimary"
+
+
+                android:layout_centerHorizontal="true"
+                >
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+
+
+                    android:text="Notes"
+                    />
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:text="Tasks"
+                    />
+            </com.google.android.material.tabs.TabLayout>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/settings"
+                android:onClick="settingsPage"
+                android:layout_marginEnd="@dimen/margin_end"
+                android:background="@drawable/settings"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Search notes"
+        android:textSize="13sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/search"
+        android:paddingStart="20dp"
+        android:textColor="?attr/smallTextColor"
+        android:text="balling"
+        android:paddingEnd="20dp"
+        android:drawableStart="@drawable/search"
+        android:layout_margin="@dimen/margin_end"
+        android:background="@drawable/search_background"
+        android:layout_below="@id/toolbar"
+        />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_below="@+id/search"
+        android:id="@+id/viewpager"
+        android:layout_height="match_parent"
+
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="addNote"
+        android:id="@+id/add"
+        android:foregroundGravity="center"
+
+        android:tint="@color/colorPrimary"
+
+        android:backgroundTint="@color/colorPrimary"
+        android:foreground="@drawable/add"
+        android:layout_marginBottom="50dp"
+        />
+
+
+</RelativeLayout>

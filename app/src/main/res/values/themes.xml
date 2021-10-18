@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Votenoid" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="backgroundColor">@color/alternate_white</item>
+        <item name="bigTextColor">@color/headerColor</item>
+        <item name="headerColor">@color/small_text_color</item>
+        <item name="smallTextColor">@color/big_text_color</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="searchColor">#E8E8E8</item>
+        <item name="cardBackgroundColor">@color/gray_white</item>
+
+        <item name="tabTextColor">@color/headerColor</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="tabTextAppearance">
+        <item name="android:textSize">22dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Votenoid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Votenoid.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Votenoid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

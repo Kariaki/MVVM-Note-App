@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Votenoid</string>
+    <string name="dummyText">When an unknown printer locked a gallery of type and scrambled eggs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="story">the work in that transaction is completed or nothing is done. The atomic property implies that partial changes made by a transaction must be undone if the transaction abort. Example: an ATM account cannot be debited if not credited.
+Consistent
+Data is in a state of consistency when a transaction starts and when it end successfully. That is constraints are true before the transaction starts, and the constraint will be true after the transaction terminates.
+Example: if a user account is balanced before transaction, then the account should be balanced after transaction
+Isolation:
+As transactions run concurrently, transactions do not interfere with each other. In other words, a transaction should not overwrite change made by another transaction</string>
+
+    <string name="write_note_hint">write note</string>
+    <string name="title_activity_view_binding">ViewBindingActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
