@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Screens
+package com.votenoid.myapplication.screens
 
 import android.content.DialogInterface
 import android.os.Bundle

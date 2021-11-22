@@ -75,7 +75,6 @@ class NotesPage : Fragment() {
 
             noteclick.onClick(noteList[position])
 
-
         }
 
         override fun onLongClick(position: Int) {

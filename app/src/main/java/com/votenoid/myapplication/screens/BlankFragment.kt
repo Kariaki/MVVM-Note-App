@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Screens
+package com.votenoid.myapplication.screens
 
 import android.os.Bundle
 import android.text.Editable

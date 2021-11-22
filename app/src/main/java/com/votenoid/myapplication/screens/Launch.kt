@@ -16,7 +16,7 @@ import com.votenoid.myapplication.Adapter.ClickListen
 import com.votenoid.myapplication.Adapter.TaskEntity
 import com.votenoid.myapplication.Entities.NoteEntity
 import com.votenoid.myapplication.R
-import com.votenoid.myapplication.Screens.CreateTask
+import com.votenoid.myapplication.screens.CreateTask
 import com.votenoid.votenoid.Adapter.ItemClickListener
 import com.votenoid.votenoid.Adapter.PageAdapter
 

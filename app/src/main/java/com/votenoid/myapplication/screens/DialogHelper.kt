@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Screens
+package com.votenoid.myapplication.screens
 
 import android.app.AlertDialog
 import android.app.AlertDialog.Builder
