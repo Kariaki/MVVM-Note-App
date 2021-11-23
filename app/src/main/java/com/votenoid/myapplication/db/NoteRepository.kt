@@ -1,9 +1,9 @@
 package com.votenoid.votenoid.Database
 
 import androidx.lifecycle.LiveData
-import com.votenoid.myapplication.Adapter.TaskEntity
-import com.votenoid.myapplication.Entities.NoteEntity
-import com.votenoid.myapplication.Entities.TaskEvent
+import com.votenoid.myapplication.adapters.TaskEntity
+import com.votenoid.myapplication.entities.NoteEntity
+import com.votenoid.myapplication.entities.TaskEvent
 
 class NoteRepository(private val noteDao: NoteDao) {
 

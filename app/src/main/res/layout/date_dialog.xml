@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/datePicker"
         android:datePickerMode="calendar"
+        android:calendarTextColor="?attr/headerColor"
         android:layout_height="wrap_content"
         />
     <Button

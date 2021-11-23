@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Adapter
+package com.votenoid.myapplication.adapters
 
 import android.content.Context
 import android.view.View
@@ -6,10 +6,8 @@ import android.widget.TextView
 import com.data.recyclerview_helper.MainViewHolder
 import com.data.recyclerview_helper.SuperClickListener
 import com.data.recyclerview_helper.SuperEntity
-import com.votenoid.myapplication.Entities.NoteEntity
 import com.votenoid.myapplication.R
 import com.votenoid.votenoid.Adapter.ItemClickListener
-import com.votenoid.votenoid.Database.Notes
 
 class TaskViewHolder(itemView: View) : MainViewHolder(itemView = itemView) {
     lateinit var tittle: TextView

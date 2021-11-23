@@ -13,7 +13,11 @@
         <entry key="app/src/main/res/drawable/due_date.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/redo.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.3765625" />
+        <entry key="app/src/main/res/drawable/task_card_background.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/drawable/undo.xml" value="0.3765625" />
+        <entry key="app/src/main/res/layout-land/create_task.xml" value="0.304673721340388" />
+        <entry key="app/src/main/res/layout-land/launch.xml" value="0.304673721340388" />
+        <entry key="app/src/main/res/layout-land/task_dialog.xml" value="0.304673721340388" />
         <entry key="app/src/main/res/layout/activity_first.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/activity_note.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.36041666666666666" />

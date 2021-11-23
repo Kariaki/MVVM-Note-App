@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Entities;
+package com.votenoid.myapplication.entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

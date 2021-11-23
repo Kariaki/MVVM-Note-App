@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Database
+package com.votenoid.myapplication.db
 
 import androidx.room.RoomDatabase
 import com.votenoid.votenoid.Database.NoteDao

@@ -1,7 +1,6 @@
-package com.votenoid.myapplication.Adapter
+package com.votenoid.myapplication.adapters
 
 import com.data.recyclerview_helper.SuperEntity
-import com.votenoid.myapplication.Entities.NoteEntity
 
 interface ClickListen {
 

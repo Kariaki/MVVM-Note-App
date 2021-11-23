@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/alternate_white"
     android:layout_height="match_parent"
-    tools:context=".Screens.BlankFragment">
+    tools:context=".screens.BlankFragment">
 
 
     <androidx.appcompat.widget.Toolbar

@@ -9,12 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
-import com.votenoid.myapplication.Database.NoteViewModel
-import com.votenoid.myapplication.Entities.NoteEntity
+import com.votenoid.myapplication.db.NoteViewModel
+import com.votenoid.myapplication.entities.NoteEntity
 import com.votenoid.myapplication.NoteTypes
 import com.votenoid.myapplication.R
 
-class WriteNotes(var currentNote: NoteEntity?) : Fragment() {
+class WriteNotes() : Fragment() {
+
+
+    private var currentNote:NoteEntity?=null
+
+    constructor(notes: NoteEntity?):this(){
+        currentNote=notes
+    }
 
 
     lateinit var note_text: EditText
@@ -30,7 +37,7 @@ class WriteNotes(var currentNote: NoteEntity?) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         val contentView: View = inflater.inflate(R.layout.write_notes, container, false)
@@ -96,7 +103,6 @@ class WriteNotes(var currentNote: NoteEntity?) : Fragment() {
     }
 
     fun clickListeners() {
-
 
         redo.setOnClickListener {
             redoAction()

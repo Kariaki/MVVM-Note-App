@@ -1,16 +1,13 @@
 package com.votenoid.myapplication
 
-import android.app.Dialog
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.DialogFragment
-import com.votenoid.myapplication.Adapter.DoneClickListener
+import com.votenoid.myapplication.adapters.DoneClickListener
 
 class TaskDialog : DialogFragment() {
 

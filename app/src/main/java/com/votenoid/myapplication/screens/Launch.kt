@@ -7,17 +7,18 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.data.recyclerview_helper.SuperEntity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.votenoid.myapplication.Adapter.ClickListen
-import com.votenoid.myapplication.Adapter.TaskEntity
-import com.votenoid.myapplication.Entities.NoteEntity
+import com.votenoid.myapplication.adapters.ClickListen
+import com.votenoid.myapplication.adapters.TaskEntity
+import com.votenoid.myapplication.entities.NoteEntity
 import com.votenoid.myapplication.R
+import com.votenoid.myapplication.db.NoteViewModel
 import com.votenoid.myapplication.screens.CreateTask
-import com.votenoid.votenoid.Adapter.ItemClickListener
 import com.votenoid.votenoid.Adapter.PageAdapter
 
 
@@ -29,13 +30,14 @@ class Launch : AppCompatActivity() {
     lateinit var pages: ViewPager2
     var pageAdapter: PageAdapter? = null
     var pageList = ArrayList<Fragment>()
-
     var context: Context? = null
-
+    lateinit var viewmodel:NoteViewModel
     lateinit var addButton: FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.launch)
+        viewmodel=ViewModelProvider(this@Launch).get(NoteViewModel::class.java)
 
         context = this
         home_tab = findViewById(R.id.home_tab)
@@ -44,22 +46,15 @@ class Launch : AppCompatActivity() {
         settings = findViewById(R.id.settings)
         addButton = findViewById(R.id.add)
         pageAdapter = PageAdapter(this)
-        var notePage = NotesPage()
-
-
-        notePage.setNoteClick(noteClickListen)
-
+        val notePage = NotesPage().apply { noteclick=noteClickListen }
         pageList.add(notePage)
-        var taskPage=Task()
-        taskPage.setNoteClick(taskClickListen)
+        val taskPage=Task()
+        taskPage.taskClick=taskClickListen
+
         pageList.add(taskPage)
         pageAdapter?.fragmentList = pageList
 
-
-
-
         pages.isUserInputEnabled = true
-
         pages.adapter = pageAdapter
         TabLayoutMediator(home_tab, pages) { tab, position ->
             run {
@@ -73,14 +68,8 @@ class Launch : AppCompatActivity() {
             }
         }.attach()
 
-        pages.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-
-            }
-        })
 
     }
-
     fun addNote(view: View) {
 
 
@@ -99,17 +88,17 @@ class Launch : AppCompatActivity() {
     }
 
     fun openNote(note: NoteEntity) {
-        var manager = supportFragmentManager
-        var transaction = manager.beginTransaction()
-        transaction.replace(R.id.root, WriteNotes(note)).addToBackStack(null).commit()
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.add(R.id.root, WriteNotes(note)).addToBackStack(null).commit()
         addButton.visibility = View.GONE
 
     }
     fun openTask(task:TaskEntity?){
 
-        var manager = supportFragmentManager
-        var transaction = manager.beginTransaction()
-        transaction.replace(R.id.root, CreateTask(task)).addToBackStack(null).commit()
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.add(R.id.root, CreateTask(task)).addToBackStack(null).commit()
         addButton.visibility = View.GONE
     }
 
@@ -126,7 +115,6 @@ class Launch : AppCompatActivity() {
         }
 
         override fun onLongClick(note: SuperEntity) {
-
         }
     }
 
@@ -141,6 +129,7 @@ class Launch : AppCompatActivity() {
             super.onLongClick(note)
         }
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         addButton.visibility = View.VISIBLE

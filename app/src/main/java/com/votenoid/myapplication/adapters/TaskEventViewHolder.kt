@@ -1,15 +1,13 @@
-package com.votenoid.myapplication.Adapter
+package com.votenoid.myapplication.adapters
 
 import android.content.Context
 import android.view.View
-import android.widget.DatePicker
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatCheckBox
 import com.data.recyclerview_helper.MainViewHolder
 import com.data.recyclerview_helper.SuperClickListener
 import com.data.recyclerview_helper.SuperEntity
-import com.votenoid.myapplication.Entities.NoteEntity
-import com.votenoid.myapplication.Entities.TaskEvent
+import com.votenoid.myapplication.entities.TaskEvent
 import com.votenoid.myapplication.R
 import com.votenoid.votenoid.Adapter.ItemClickListener
 

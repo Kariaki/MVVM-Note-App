@@ -14,18 +14,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.data.recyclerview_helper.GeneralAdapter
 import com.data.recyclerview_helper.MainViewHolder
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.votenoid.myapplication.Adapter.DoneClickListener
-import com.votenoid.myapplication.Adapter.TaskEventViewHolder
-import com.votenoid.myapplication.Adapter.TaskEntity
-import com.votenoid.myapplication.Database.NoteViewModel
+import com.votenoid.myapplication.adapters.DoneClickListener
+import com.votenoid.myapplication.adapters.TaskEventViewHolder
+import com.votenoid.myapplication.adapters.TaskEntity
+import com.votenoid.myapplication.db.NoteViewModel
 import com.votenoid.myapplication.DateDialog
-import com.votenoid.myapplication.Entities.NoteEntity
-import com.votenoid.myapplication.Entities.TaskEvent
+import com.votenoid.myapplication.entities.TaskEvent
 import com.votenoid.myapplication.R
 import com.votenoid.myapplication.TaskDialog
 import com.votenoid.votenoid.Adapter.ItemClickListener
 
-class CreateTask(var currentTask: TaskEntity?) : Fragment() {
+class CreateTask(var currentTask:TaskEntity?) : Fragment() {
 
 
     lateinit var taskList: RecyclerView
@@ -38,7 +37,8 @@ class CreateTask(var currentTask: TaskEntity?) : Fragment() {
     lateinit var back: ImageView
     lateinit var noteViewModel: NoteViewModel
 
-    var taskId = System.currentTimeMillis()
+     var taskId = System.currentTimeMillis()
+
 
 
     override fun onCreateView(
@@ -63,8 +63,8 @@ class CreateTask(var currentTask: TaskEntity?) : Fragment() {
             this.viewHolderPlug = viewPlug
             superClickListener = itemClick
 
-
         }
+
         taskList.apply {
             taskList.layoutManager = LinearLayoutManager(context)
             taskList.hasFixedSize()
@@ -85,11 +85,11 @@ class CreateTask(var currentTask: TaskEntity?) : Fragment() {
         back.setOnClickListener {
             activity?.onBackPressed()
         }
-        noteViewModel.allTaskEvent(taskId).observe(viewLifecycleOwner, {
+        noteViewModel.allTaskEvent(taskId).observe(viewLifecycleOwner) {
             generalAdapter.items = it
             taskEventtems = it
             generalAdapter.notifyDataSetChanged()
-        })
+        }
 
         insertTask()
         //adding task to database

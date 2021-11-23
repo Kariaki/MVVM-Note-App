@@ -1,4 +1,4 @@
-package com.votenoid.myapplication.Adapter
+package com.votenoid.myapplication.adapters
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

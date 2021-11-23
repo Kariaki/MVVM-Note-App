@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.votenoid.myapplication.Adapter.TaskEntity
-import com.votenoid.myapplication.Entities.NoteEntity
-import com.votenoid.myapplication.Entities.TaskEvent
+import com.votenoid.myapplication.adapters.TaskEntity
+import com.votenoid.myapplication.entities.NoteEntity
+import com.votenoid.myapplication.entities.TaskEvent
 
 @Database(entities = [NoteEntity::class,TaskEntity::class,TaskEvent::class],version = 10,exportSchema = false)
 

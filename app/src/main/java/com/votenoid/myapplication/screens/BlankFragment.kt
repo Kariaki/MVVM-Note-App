@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
-import com.votenoid.myapplication.Database.NoteViewModel
+import com.votenoid.myapplication.db.NoteViewModel
 import com.votenoid.myapplication.R
 
 class BlankFragment : Fragment() {

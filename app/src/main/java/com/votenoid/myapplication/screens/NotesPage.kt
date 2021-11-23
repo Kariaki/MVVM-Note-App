@@ -1,6 +1,7 @@
 package com.votenoid.votenoid.Screens
 
 import android.content.DialogInterface
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,16 +10,16 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.data.recyclerview_helper.GeneralAdapter
 import com.data.recyclerview_helper.MainViewHolder
 import com.data.recyclerview_helper.SuperClickListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.dialog.MaterialDialogs
-import com.votenoid.myapplication.Adapter.ClickListen
-import com.votenoid.myapplication.Database.NoteViewModel
-import com.votenoid.myapplication.Entities.NoteEntity
+import com.votenoid.myapplication.adapters.ClickListen
+import com.votenoid.myapplication.db.NoteViewModel
+import com.votenoid.myapplication.entities.NoteEntity
 import com.votenoid.myapplication.R
 import com.votenoid.votenoid.Adapter.*
 
@@ -30,6 +31,8 @@ class NotesPage : Fragment() {
     var noteList = listOf<NoteEntity>()
     private lateinit var noteViewModel: NoteViewModel
 
+    lateinit var noteclick: ClickListen
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,7 +43,7 @@ class NotesPage : Fragment() {
 
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
         //observing from database
-        noteViewModel.allNotes.observe(viewLifecycleOwner, Observer { notes ->
+        noteViewModel.allNotes.observe(viewLifecycleOwner, { notes ->
             run {
                 noteList = notes
                 adapter.items = notes
@@ -50,7 +53,12 @@ class NotesPage : Fragment() {
         })
 
 
-        var layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager =
+            if (activity?.resources?.configuration?.orientation == Configuration.ORIENTATION_PORTRAIT)
+                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            else
+                GridLayoutManager(requireContext(), 3)
+
         cardList.layoutManager = layoutManager
         adapter.viewHolderPlug = viewHolderPlug
         // adapter.items = noteList
@@ -63,7 +71,7 @@ class NotesPage : Fragment() {
 
     var viewHolderPlug: GeneralAdapter.ViewHolderPlug = object : GeneralAdapter.ViewHolderPlug {
         override fun setPlug(group: ViewGroup, viewType: Int): MainViewHolder {
-            var itemView: View =
+            val itemView: View =
                 LayoutInflater.from(context).inflate(R.layout.note_card, group, false)
             return NoteTextViewHolder(itemView)
         }
@@ -78,21 +86,15 @@ class NotesPage : Fragment() {
         }
 
         override fun onLongClick(position: Int) {
-            var dialog=dialog(noteList[position])
+            val dialog = dialog(noteList[position])
             dialog.setMessage("Are you sure you want to delete?")
             dialog.setTitle("Delete Note!")
             dialog.show()
         }
     }
 
-    lateinit var noteclick: ClickListen
 
-    fun setNoteClick(click: ClickListen) {
-        noteclick = click
-    }
-
-
-    fun dialog(note:NoteEntity):AlertDialog{
+    fun dialog(note: NoteEntity): AlertDialog {
 
         val alertDialog: AlertDialog? = activity?.let {
             val builder = MaterialAlertDialogBuilder(requireContext()).apply {

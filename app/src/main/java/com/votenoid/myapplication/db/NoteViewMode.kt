@@ -1,15 +1,16 @@
-package com.votenoid.myapplication.Database
+package com.votenoid.myapplication.db
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.votenoid.myapplication.Adapter.TaskEntity
-import com.votenoid.myapplication.Entities.NoteEntity
-import com.votenoid.myapplication.Entities.TaskEvent
+import com.votenoid.myapplication.adapters.ClickListen
+import com.votenoid.myapplication.adapters.TaskEntity
+import com.votenoid.myapplication.entities.NoteEntity
+import com.votenoid.myapplication.entities.TaskEvent
 import com.votenoid.votenoid.Database.NoteDatabase
 import com.votenoid.votenoid.Database.NoteRepository
-import com.votenoid.votenoid.Database.Notes
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -17,6 +18,10 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
      val allNotes: LiveData<List<NoteEntity>>
      val allTask: LiveData<MutableList<TaskEntity>>
+     val noteClickListen :MutableLiveData<ClickListen> =MutableLiveData()
+     val taskClickListen :MutableLiveData<ClickListen> =MutableLiveData()
+
+
     private val repository: NoteRepository
 
     init {

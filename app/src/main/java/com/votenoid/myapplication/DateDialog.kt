@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
-import com.votenoid.myapplication.Adapter.DoneClickListener
+import com.votenoid.myapplication.adapters.DoneClickListener
 
 class DateDialog() : DialogFragment() {
 
