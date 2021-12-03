@@ -9,8 +9,10 @@
         <entry key="../../../../layout/compose-model-1629370617540.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/arrow_down.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/back.xml" value="0.3765625" />
+        <entry key="app/src/main/res/drawable/dialog_background.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/drawable/done.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/due_date.xml" value="0.3765625" />
+        <entry key="app/src/main/res/drawable/logo.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/redo.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/search_background.xml" value="0.3765625" />
         <entry key="app/src/main/res/drawable/task_card_background.xml" value="0.37604166666666666" />
@@ -35,6 +37,8 @@
         <entry key="app/src/main/res/layout/task_event.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/todo_task.xml" value="0.36041666666666666" />
         <entry key="app/src/main/res/layout/write_notes.xml" value="0.20244565217391305" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2171875" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3472222222222222" />
       </map>
     </option>
   </component>

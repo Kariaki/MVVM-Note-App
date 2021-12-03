@@ -14,8 +14,6 @@
         android:layout_toStartOf="@id/scroll"
         app:contentInsetStart="0dp">
 
-
-
             <ImageView
                 android:id="@+id/back"
                 android:layout_width="30dp"

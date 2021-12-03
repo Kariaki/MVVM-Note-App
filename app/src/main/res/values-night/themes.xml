@@ -24,6 +24,28 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.splashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:windowBackground">@drawable/splash_screen_logo1</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="dialog_theme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
     <style name="tabTextAppearance">
         <item name="android:textSize">22dp</item>
         <item name="android:textStyle">bold</item>

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.votenoid.myapplication">
+    package="com.notenoid.myapplication">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Votenoid">
 
 
         <activity
-            android:name="com.votenoid.votenoid.Screens.Launch"
+            android:name="com.notenoid.notenoid.Screens.Launch"
             android:exported="true">
 
 
         </activity>
         <activity
-            android:name="com.votenoid.myapplication.FirstActivity"
+            android:theme="@style/Theme.splashScreen"
+            android:name="com.notenoid.myapplication.FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,10 @@
             </intent-filter>
 
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class GeneralAdapter : RecyclerView.Adapter<MainViewHolder>() {
 
+    /**
+     * Generate the adapter for the recyclerview preventing you from creating an adapter
+     * each time you want to create a recyclerview
+     */
     var items= listOf<SuperEntity>()
 
     interface  ViewHolderPlug{
