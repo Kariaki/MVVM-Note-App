@@ -1,6 +1,7 @@
 # MVVM-Note-App
 This project is a simple note app with clean architecture that uses material ui in android.
-https://play.google.com/store/apps/details?id=com.votenoid.myapplication
+
+Get on playstore- https://play.google.com/store/apps/details?id=com.votenoid.myapplication
 
 
 # LANDSCAPE MODE
